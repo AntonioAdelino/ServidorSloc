@@ -16,42 +16,38 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
 
-import com.servidorsloc.service.GerenteServices;
 import com.servidorsloc.service.VendedorServices;
-import com.servidorsloc.model.Gerente;
+import com.servidorsloc.model.Vendedor;
  
 
 @RestController
-public class GerenteController {
-	
-	@Autowired
-	private GerenteServices gerenteServices;
+public class VendedorController {
 	
 	@Autowired
 	private VendedorServices vendedorServices;
 	
-	@GetMapping("/gerentes")
-	public List<Gerente> listAll() {    
-	return gerenteServices.findAll();
+	@GetMapping("/vendedores")
+	public List<Vendedor> listAll() {    
+	return vendedorServices.findAll();
 	}
 	
-	@PostMapping("/gerentes")
+	@PostMapping("/vendedores")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Gerente adicionar(@RequestBody Gerente gerente) {
-		return gerenteServices.save(gerente);	
+	public Vendedor adicionar(@RequestBody Vendedor vendedor) {
+		return vendedorServices.save(vendedor);	
 	}
 	
-	@PutMapping("/gerentes")
+	@PutMapping("/vendedores")
 	@ResponseStatus(HttpStatus.OK)
-	public Gerente atualizar(@RequestBody Gerente gerente) {
-		return gerenteServices.update(gerente);	
+	public Vendedor atualizar(@RequestBody Vendedor vendedor) {
+		return vendedorServices.update(vendedor);	
 	}
 	
 	
-	@DeleteMapping("/gerentes")
+	@DeleteMapping("/vendedores")
 	@ResponseStatus(HttpStatus.OK)
 	public void deletar(@RequestBody int id) {
-		gerenteServices.delete(Long.valueOf(id));	
+		vendedorServices.delete(Long.valueOf(id));	
 	}
 	
 	

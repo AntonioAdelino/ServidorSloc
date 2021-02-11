@@ -1,18 +1,15 @@
 package com.servidorsloc.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="gerente")
-public class Gerente {
+@Table(name="vendedor")
+public class Vendedor {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -26,18 +23,9 @@ public class Gerente {
 	
 	private String senha;
 	
-	@OneToMany (mappedBy = "gerente", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Vendedor> vendedores; 
-	
-/*	public Gerente(long id, String nome, String cpf, String email, String senha ) {
-		this.id = id;
-		this.nome = nome;
-		this.email = email;
-		this.senha = senha;
-		this.vendedores = null;
-		
-	}*/
-	
+	@ManyToOne
+	private Gerente gerente;
+
 	public long getId() {
 		return id;
 	}
@@ -76,6 +64,14 @@ public class Gerente {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public Gerente getGerente() {
+		return gerente;
+	}
+
+	public void setGerente(Gerente gerente) {
+		this.gerente = gerente;
 	}
 	
 }
