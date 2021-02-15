@@ -1,10 +1,14 @@
 package com.servidorsloc.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,6 +29,9 @@ public class Vendedor {
 	
 	@ManyToOne
 	private Gerente gerente;
+	
+	@OneToMany (mappedBy = "vendedor", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Rota> rotas;
 
 	public long getId() {
 		return id;

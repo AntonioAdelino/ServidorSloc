@@ -11,38 +11,38 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import com.servidorsloc.service.VendedorServices;
-import com.servidorsloc.model.Vendedor;
+import com.servidorsloc.service.RotaServices;
+import com.servidorsloc.model.Rota;
  
 
 @RestController
-public class VendedorController {
+public class RotaController {
 	
 	@Autowired
-	private VendedorServices vendedorServices;
+	private RotaServices rotaServices;
 	
-	@GetMapping("/vendedores")
-	public List<Vendedor> listAll() {    
-	return vendedorServices.findAll();
+	@GetMapping("/rotas")
+	public List<Rota> listAll() {    
+	return rotaServices.findAll();
 	}
 	
-	@PostMapping("/vendedores")
+	@PostMapping("/rotas")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Vendedor adicionar(@RequestBody Vendedor vendedor) {
-		return vendedorServices.save(vendedor);	
+	public Rota adicionar(@RequestBody Rota rota) {
+		return rotaServices.save(rota);	
 	}
 	
-	@PutMapping("/vendedores")
+	@PutMapping("/rotas")
 	@ResponseStatus(HttpStatus.OK)
-	public Vendedor atualizar(@RequestBody Vendedor vendedor) {
-		return vendedorServices.update(vendedor);	
+	public Rota atualizar(@RequestBody Rota rota) {
+		return rotaServices.update(rota);	
 	}
 	
 	
-	@DeleteMapping("/vendedores")
+	@DeleteMapping("/rotas")
 	@ResponseStatus(HttpStatus.OK)
 	public void deletar(@RequestBody int id) {
-		vendedorServices.delete(Long.valueOf(id));	
+		rotaServices.delete(Long.valueOf(id));	
 	}
 	
 	
