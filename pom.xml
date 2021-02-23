@@ -14,7 +14,7 @@
 	<name>ServidorSloc</name>
 	<description>Servidor do aplicativo Sloc</description>
 	<properties>
-		<java.version>8</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -53,6 +53,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+                	<mainClass>com.servidorsloc.ServidorSlocApplication</mainClass>
+            	</configuration>
 			</plugin>
 		</plugins>
 	</build>
