@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ServidorSlocApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ServidorSlocApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(ServidorSlocApplication.class, args);
+    }
 }

@@ -12,73 +12,73 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="vendedor")
+@Table(name = "vendedor")
 public class Vendedor {
-	
-	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long id;
-	
-	private String nome;
-	
-	private String cpf;
-	
-	private String email;
-	
-	private String senha;
-	
-	@ManyToOne
-	private Gerente gerente;
-	
-	@OneToMany (mappedBy = "vendedor", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Rota> rotas;
 
-	public long getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    private String nome;
 
-	public String getNome() {
-		return nome;
-	}
+    private String cpf;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    private String email;
 
-	public String getCpf() {
-		return cpf;
-	}
+    private String senha;
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
+    @ManyToOne
+    private Gerente gerente;
 
-	public String getEmail() {
-		return email;
-	}
+    @OneToMany(mappedBy = "vendedor", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Rota> rotas;
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public String getSenha() {
-		return senha;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public Gerente getGerente() {
-		return gerente;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public void setGerente(Gerente gerente) {
-		this.gerente = gerente;
-	}
-	
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public Gerente getGerente() {
+        return gerente;
+    }
+
+    public void setGerente(Gerente gerente) {
+        this.gerente = gerente;
+    }
+
 }

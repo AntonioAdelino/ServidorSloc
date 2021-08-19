@@ -10,34 +10,33 @@ import com.servidorsloc.repository.VendedorRepository;
 
 @Service
 public class VendedorServices {
-	@Autowired
-	private VendedorRepository vendedorRepository;
-	
-	
-	public List<Vendedor> findAll(){
-		return (List<Vendedor>) this.vendedorRepository.findAll();
-	}
-	
-	public Vendedor save(Vendedor vendedor){
-		System.out.print(vendedor);
-		
-		return this.vendedorRepository.save(vendedor);
-	}
-	
-	public Vendedor update(Vendedor vendedor){
-		//buscando o vendedor no banco
-		Optional<Vendedor> g = this.vendedorRepository.findById(vendedor.getId());
-		Vendedor vendedorBanco = g.get();
-		//modificando o vendedor vindo do banco com os novos dados
-		vendedorBanco.setNome(vendedor.getNome());
-		vendedorBanco.setCpf(vendedor.getCpf());
-		vendedorBanco.setEmail(vendedor.getEmail());
-		vendedorBanco.setSenha(vendedor.getSenha());
-		
-		return this.vendedorRepository.save(vendedorBanco);
-	}
-	
-	public void delete(long id){
-		this.vendedorRepository.deleteById(id);
-	}
+    @Autowired
+    private VendedorRepository vendedorRepository;
+
+    public List<Vendedor> findAll() {
+        return (List<Vendedor>) this.vendedorRepository.findAll();
+    }
+
+    public Vendedor save(Vendedor vendedor) {
+        System.out.print(vendedor);
+
+        return this.vendedorRepository.save(vendedor);
+    }
+
+    public Vendedor update(Vendedor vendedor) {
+        //buscando o vendedor no banco
+        Optional<Vendedor> g = this.vendedorRepository.findById(vendedor.getId());
+        Vendedor vendedorBanco = g.get();
+        //modificando o vendedor vindo do banco com os novos dados
+        vendedorBanco.setNome(vendedor.getNome());
+        vendedorBanco.setCpf(vendedor.getCpf());
+        vendedorBanco.setEmail(vendedor.getEmail());
+        vendedorBanco.setSenha(vendedor.getSenha());
+
+        return this.vendedorRepository.save(vendedorBanco);
+    }
+
+    public void delete(long id) {
+        this.vendedorRepository.deleteById(id);
+    }
 }

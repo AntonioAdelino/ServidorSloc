@@ -10,71 +10,71 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="rota")
+@Table(name = "rota")
 public class Rota {
-	
-	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long id;
-	
-	private String data;
-	
-	private int distanciaCheckin;
 
-	@ManyToOne
-	private Gerente gerente;
-	
-	@ManyToOne
-	private Vendedor vendedor;
-	
-	@ManyToMany 
-	private List<Profissional> profissionais;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-	public long getId() {
-		return id;
-	}
+    private String data;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    private int distanciaCheckin;
 
-	public String getData() {
-		return data;
-	}
+    @ManyToOne
+    private Gerente gerente;
 
-	public void setData(String data) {
-		this.data = data;
-	}
+    @ManyToOne
+    private Vendedor vendedor;
 
-	public int getDistanciaCheckin() {
-		return distanciaCheckin;
-	}
+    @ManyToMany
+    private List<Profissional> profissionais;
 
-	public void setDistanciaCheckin(int distanciaCheckin) {
-		this.distanciaCheckin = distanciaCheckin;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public Gerente getGerente() {
-		return gerente;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setGerente(Gerente gerente) {
-		this.gerente = gerente;
-	}
+    public String getData() {
+        return data;
+    }
 
-	public Vendedor getVendedor() {
-		return vendedor;
-	}
+    public void setData(String data) {
+        this.data = data;
+    }
 
-	public void setVendedor(Vendedor vendedor) {
-		this.vendedor = vendedor;
-	}
+    public int getDistanciaCheckin() {
+        return distanciaCheckin;
+    }
 
-	public List<Profissional> getProfissionais() {
-		return profissionais;
-	}
+    public void setDistanciaCheckin(int distanciaCheckin) {
+        this.distanciaCheckin = distanciaCheckin;
+    }
 
-	public void setProfissionais(List<Profissional> profissionais) {
-		this.profissionais = profissionais;
-	} 
+    public Gerente getGerente() {
+        return gerente;
+    }
+
+    public void setGerente(Gerente gerente) {
+        this.gerente = gerente;
+    }
+
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public List<Profissional> getProfissionais() {
+        return profissionais;
+    }
+
+    public void setProfissionais(List<Profissional> profissionais) {
+        this.profissionais = profissionais;
+    }
 }
