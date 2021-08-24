@@ -2,6 +2,8 @@ package com.servidorsloc.controller;
 
 import java.util.List;
 
+import com.servidorsloc.model.Gerente;
+import com.servidorsloc.model.Login;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,6 +22,11 @@ public class VendedorController {
 
     @Autowired
     private VendedorServices vendedorServices;
+
+    @GetMapping("/vendedores-login")
+    public Vendedor login(@RequestBody Login login) {
+        return vendedorServices.login(login.getEmail(), login.getSenha());
+    }
 
     @GetMapping("/vendedores")
     public List<Vendedor> listAll() {

@@ -13,6 +13,16 @@ public class GerenteServices {
     @Autowired
     private GerenteRepository gerenteRepository;
 
+    public Gerente login(String email, String senha) {
+        List<Gerente> todosOsGerentes = this.findAll();
+        for (int i = 0; i <= todosOsGerentes.size(); ++i) {
+            if (todosOsGerentes.get(i).getEmail().equals(email) && todosOsGerentes.get(i).getSenha().equals(senha)) {
+                return todosOsGerentes.get(i);
+            }
+        }
+        return null;
+    }
+
     public List<Gerente> findAll() {
         return (List<Gerente>) this.gerenteRepository.findAll();
     }
