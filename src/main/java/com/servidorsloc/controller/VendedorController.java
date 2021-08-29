@@ -23,7 +23,7 @@ public class VendedorController {
     @Autowired
     private VendedorServices vendedorServices;
 
-    @GetMapping("/vendedores-login")
+    @PostMapping("/vendedores/login")
     public Vendedor login(@RequestBody Login login) {
         return vendedorServices.login(login.getEmail(), login.getSenha());
     }

@@ -16,7 +16,7 @@ public class GerenteController {
     @Autowired
     private GerenteServices gerenteServices;
 
-    @GetMapping("/gerentes-login")
+    @PostMapping("/gerentes/login")
     public Gerente login(@RequestBody Login login) {
         return gerenteServices.login(login.getEmail(), login.getSenha());
     }
