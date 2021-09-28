@@ -28,7 +28,6 @@ public class RotaServices {
         Rota rotaBanco = r.get();
         //modificando o rota vindo do banco com os novos dados
         rotaBanco.setData(rota.getData());
-        rotaBanco.setDistanciaCheckin(rota.getDistanciaCheckin());
         rotaBanco.setGerente(rota.getGerente());
         rotaBanco.setVendedor(rota.getVendedor());
         rotaBanco.setProfissionais(rota.getProfissionais());

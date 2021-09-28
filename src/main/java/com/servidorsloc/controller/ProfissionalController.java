@@ -28,7 +28,7 @@ public class ProfissionalController {
 
     @PostMapping("/profissionais")
     @ResponseStatus(HttpStatus.CREATED)
-    public Profissional adicionar(@RequestBody Profissional profissional) {
+    public long adicionar(@RequestBody Profissional profissional) {
         return profissionalServices.save(profissional);
     }
 

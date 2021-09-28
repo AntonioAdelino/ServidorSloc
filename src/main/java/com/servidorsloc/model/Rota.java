@@ -19,8 +19,6 @@ public class Rota {
 
     private String data;
 
-    private int distanciaCheckin;
-
     @ManyToOne
     private Gerente gerente;
 
@@ -44,14 +42,6 @@ public class Rota {
 
     public void setData(String data) {
         this.data = data;
-    }
-
-    public int getDistanciaCheckin() {
-        return distanciaCheckin;
-    }
-
-    public void setDistanciaCheckin(int distanciaCheckin) {
-        this.distanciaCheckin = distanciaCheckin;
     }
 
     public Gerente getGerente() {

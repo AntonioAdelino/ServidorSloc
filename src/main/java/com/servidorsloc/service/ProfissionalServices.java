@@ -17,8 +17,8 @@ public class ProfissionalServices {
         return (List<Profissional>) this.profissionalRepository.findAll();
     }
 
-    public Profissional save(Profissional profissional) {
-        return this.profissionalRepository.save(profissional);
+    public long save(Profissional profissional) {
+        return this.profissionalRepository.save(profissional).getId();
     }
 
     public Profissional update(Profissional profissional) {
