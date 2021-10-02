@@ -30,9 +30,6 @@ public class Profissional {
 
     private String longitude;
 
-    @ManyToMany
-    private List<Rota> rotas;
-
     public long getId() {
         return id;
     }

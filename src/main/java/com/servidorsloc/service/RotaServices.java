@@ -1,8 +1,10 @@
 package com.servidorsloc.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.servidorsloc.model.Vendedor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,45 @@ public class RotaServices {
         return (List<Rota>) this.rotaRepository.findAll();
     }
 
+    public List<Rota> rotasPorVendedor(int vendedor) {
+        List<Rota> todasAsRotas = this.findAll();
+        List<Rota> rotas = new ArrayList<>();
+        for (Rota rota : todasAsRotas) {
+            if (rota.getVendedor() != null) {
+                if (rota.getVendedor().getId() == vendedor) {
+                    rotas.add(rota);
+                }
+            }
+        }
+        return rotas;
+    }
+
+    public int quatidadeDeRotasPorVendedor(int vendedor) {
+        List<Rota> todasAsRotas = this.findAll();
+        List<Rota> rotas = new ArrayList<>();
+        for (Rota rota : todasAsRotas) {
+            if (rota.getVendedor() != null) {
+                if (rota.getVendedor().getId() == vendedor) {
+                    rotas.add(rota);
+                }
+            }
+        }
+        return rotas.size();
+    }
+
+    public int quatidadeDeProfissionaisVisitadosPorVendedor(int vendedor) {
+        List<Rota> todasAsRotas = this.findAll();
+        int somador = 0;
+        for (Rota rota : todasAsRotas) {
+            if (rota.getVendedor() != null) {
+                if (rota.getVendedor().getId() == vendedor) {
+                    somador += rota.getProfissionais().size();
+                }
+            }
+        }
+        return somador;
+    }
+
     public Rota save(Rota rota) {
         return this.rotaRepository.save(rota);
     }
@@ -28,7 +69,6 @@ public class RotaServices {
         Rota rotaBanco = r.get();
         //modificando o rota vindo do banco com os novos dados
         rotaBanco.setData(rota.getData());
-        rotaBanco.setGerente(rota.getGerente());
         rotaBanco.setVendedor(rota.getVendedor());
         rotaBanco.setProfissionais(rota.getProfissionais());
 

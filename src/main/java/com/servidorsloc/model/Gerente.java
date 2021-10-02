@@ -29,9 +29,6 @@ public class Gerente {
     @OneToMany(mappedBy = "gerente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Vendedor> vendedores;
 
-    @OneToMany(mappedBy = "gerente", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Rota> rotas;
-
     public long getId() {
         return id;
     }

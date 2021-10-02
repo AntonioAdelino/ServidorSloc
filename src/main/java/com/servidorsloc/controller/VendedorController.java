@@ -28,6 +28,11 @@ public class VendedorController {
         return vendedorServices.login(login.getEmail(), login.getSenha());
     }
 
+    @PostMapping("/vendedores/por-gerente")
+    public List<Vendedor> login(@RequestBody int gerente) {
+        return vendedorServices.vendedoresPorGerente(gerente);
+    }
+
     @GetMapping("/vendedores")
     public List<Vendedor> listAll() {
         return vendedorServices.findAll();

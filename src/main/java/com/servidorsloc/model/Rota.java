@@ -20,9 +20,6 @@ public class Rota {
     private String data;
 
     @ManyToOne
-    private Gerente gerente;
-
-    @ManyToOne
     private Vendedor vendedor;
 
     @ManyToMany
@@ -42,14 +39,6 @@ public class Rota {
 
     public void setData(String data) {
         this.data = data;
-    }
-
-    public Gerente getGerente() {
-        return gerente;
-    }
-
-    public void setGerente(Gerente gerente) {
-        this.gerente = gerente;
     }
 
     public Vendedor getVendedor() {

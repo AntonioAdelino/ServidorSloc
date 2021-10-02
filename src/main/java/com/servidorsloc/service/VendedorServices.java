@@ -1,5 +1,6 @@
 package com.servidorsloc.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +27,17 @@ public class VendedorServices {
 
     public List<Vendedor> findAll() {
         return (List<Vendedor>) this.vendedorRepository.findAll();
+    }
+
+    public List<Vendedor> vendedoresPorGerente(int gerente) {
+        List<Vendedor> todosOsVendedores = this.findAll();
+        List<Vendedor> vendedores = new ArrayList<>();
+        for (Vendedor vendedor : todosOsVendedores) {
+            if (vendedor.getGerente().getId() == gerente) {
+                vendedores.add(vendedor);
+            }
+        }
+        return vendedores;
     }
 
     public Vendedor save(Vendedor vendedor) {
