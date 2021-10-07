@@ -28,6 +28,7 @@ public class VisitaServices {
         //modificando a Visita vinda do banco com os novos dados
         visitaBanco.setDistanciaCheckin(visita.getDistanciaCheckin());
         visitaBanco.setRota(visita.getRota());
+        visitaBanco.setProfissional(visita.getProfissional());
 
         return this.visitaRepository.save(visitaBanco);
     }

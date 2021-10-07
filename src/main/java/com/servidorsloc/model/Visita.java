@@ -15,6 +15,9 @@ public class Visita {
     @ManyToOne
     private Rota rota;
 
+    @OneToOne
+    private Profissional profissional;
+
     public long getId() {
         return id;
     }
@@ -39,4 +42,11 @@ public class Visita {
         this.rota = rota;
     }
 
+    public Profissional getProfissional() {
+        return profissional;
+    }
+
+    public void setProfissional(Profissional profissional) {
+        this.profissional = profissional;
+    }
 }
