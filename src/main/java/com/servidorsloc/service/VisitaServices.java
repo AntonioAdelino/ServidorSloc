@@ -1,10 +1,12 @@
 package com.servidorsloc.service;
 
+import com.servidorsloc.model.Vendedor;
 import com.servidorsloc.model.Visita;
 import com.servidorsloc.repository.VisitaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,4 +38,16 @@ public class VisitaServices {
     public void delete(long id) {
         this.visitaRepository.deleteById(id);
     }
+
+    public List<Visita> visitaPorRota(int rota) {
+        List<Visita> todasAsVisitas = this.findAll();
+        List<Visita> visitas = new ArrayList<>();
+        for (Visita visita : todasAsVisitas) {
+            if (visita.getRota().getId() == rota) {
+                visitas.add(visita);
+            }
+        }
+        return visitas;
+    }
+
 }

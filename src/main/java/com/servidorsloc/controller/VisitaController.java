@@ -1,5 +1,6 @@
 package com.servidorsloc.controller;
 
+import com.servidorsloc.model.Vendedor;
 import com.servidorsloc.model.Visita;
 import com.servidorsloc.service.VisitaServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,11 @@ public class VisitaController {
     @GetMapping("/visitas")
     public List<Visita> listAll() {
         return visitaServices.findAll();
+    }
+
+    @PostMapping("/visitas/por-rota")
+    public List<Visita> visitaPorRota(@RequestBody int rota) {
+        return visitaServices.visitaPorRota(rota);
     }
 
     @PostMapping("/visitas")
