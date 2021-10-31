@@ -48,8 +48,8 @@ public class VendedorServices {
 
     public Vendedor update(Vendedor vendedor) {
         //buscando o vendedor no banco
-        Optional<Vendedor> g = this.vendedorRepository.findById(vendedor.getId());
-        Vendedor vendedorBanco = g.get();
+        Optional<Vendedor> v = this.vendedorRepository.findById(vendedor.getId());
+        Vendedor vendedorBanco = v.get();
         //modificando o vendedor vindo do banco com os novos dados
         vendedorBanco.setNome(vendedor.getNome());
         vendedorBanco.setCpf(vendedor.getCpf());
