@@ -39,7 +39,6 @@ public class GerenteController {
         return gerenteServices.update(gerente);
     }
 
-
     @DeleteMapping("/gerentes")
     @ResponseStatus(HttpStatus.OK)
     public void deletar(@RequestBody int id) {

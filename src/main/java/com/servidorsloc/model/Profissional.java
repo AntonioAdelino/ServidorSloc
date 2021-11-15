@@ -30,6 +30,18 @@ public class Profissional {
 
     private String longitude;
 
+    public Profissional(String idPlace, String nome, String endereco, String contato, String avaliacao, String latitude, String longitude) {
+        this.idPlace = idPlace;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.contato = contato;
+        this.avaliacao = avaliacao;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    public Profissional() {}
+
     public long getId() {
         return id;
     }

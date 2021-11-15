@@ -33,6 +33,16 @@ public class Vendedor {
     @OneToMany(mappedBy = "vendedor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Rota> rotas;
 
+    public Vendedor(String nome, String cpf, String email, String senha, Gerente gerente) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.senha = senha;
+        this.gerente = gerente;
+    }
+
+    public Vendedor() {}
+
     public long getId() {
         return id;
     }
