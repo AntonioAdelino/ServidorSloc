@@ -18,6 +18,14 @@ public class Visita {
     @OneToOne
     private Profissional profissional;
 
+    public Visita(int distanciaCheckin, Rota rota, Profissional profissional) {
+        this.distanciaCheckin = distanciaCheckin;
+        this.rota = rota;
+        this.profissional = profissional;
+    }
+
+    public Visita() {}
+
     public long getId() {
         return id;
     }

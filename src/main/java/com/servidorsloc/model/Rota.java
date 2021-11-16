@@ -25,6 +25,14 @@ public class Rota {
     @ManyToMany
     private List<Profissional> profissionais;
 
+    public Rota(String data, Vendedor vendedor, List<Profissional> profissionais) {
+        this.data = data;
+        this.vendedor = vendedor;
+        this.profissionais = profissionais;
+    }
+
+    public Rota() {}
+
     public long getId() {
         return id;
     }
